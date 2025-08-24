@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YAICESS Conference Registration</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh; 
+      margin: 0;
+      padding: 20px;
+    }
+    
+    .form-container {
+      background: #fff;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      width: 100%; 
+      max-width: 500px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .form-container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #667eea, #764ba2);
+    }
+    
+    .logo-section {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+      color: #0d47a1;
+      margin-bottom: 10px;
+    }
+    
+    .logo span {
+      color: #667eea;
+    }
+    
+    .subtitle {
+      color: #666;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+    
+    h1 {
+      text-align: center;
+      color: #0d47a1;
+      margin-bottom: 30px;
+      font-size: 24px;
+    }
+    
+    .form-group {
+      margin-bottom: 20px;
+    }
+    
+    label {
+      font-weight: 600;
+      display: block;
+      margin-bottom: 8px;
+      color: #333;
+      font-size: 14px;
+    }
+    
+    input {
+      width: 100%;
+      padding: 12px 15px;
+      border-radius: 8px;
+      border: 2px solid #e1e5e9;
+      font-size: 15px;
+      transition: all 0.3s ease;
+      background: #f8f9fa;
+    }
+    
+    input:focus {
+      outline: none;
+      border-color: #667eea;
+      background: #fff;
+      box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    }
+    
+    input.error {
+      border-color: #dc3545;
+    }
+    
+    .error-message {
+      color: #dc3545;
+      font-size: 12px;
+      margin-top: 5px;
+      display: none;
+    }
+    
+    button {
+      width: 100%;
+      padding: 15px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-top: 10px;
+    }
+    
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+    }
+    
+    button:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+    }
+    
+    .price-info {
+      text-align: center;
+      margin-top: 15px;
+      padding: 10px;
+      background: #e3f2fd;
+      border-radius: 6px;
+      color: #0d47a1;
+      font-size: 14px;
+    }
+    
+         .back-link {
+       text-align: center;
+       margin-top: 20px;
+       width: 100%;
+       max-width: 500px;
+       margin-left: auto;
+       margin-right: auto;
+     }
+    
+    .back-link a {
+      color: #667eea;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    
+    .back-link a:hover {
+      text-decoration: underline;
+    }
+    
+    .debug-info {
+      background: #fff3cd;
+      border: 1px solid #ffeaa7;
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 20px;
+      color: #856404;
+    }
+    
+    @media (max-width: 480px) {
+      .form-container {
+        padding: 30px 20px;
+      }
+      
+      h1 {
+        font-size: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <form class="form-container" action="register.php" method="post" id="registrationForm">
+    <div class="logo-section">
+      <div class="logo">YAICESS<span>.</span></div>
+      <div class="subtitle">Innovation Conference 2K25</div>
+    </div>
+    
+
+    
+    <div class="back-link" style="margin-bottom: 20px; text-align: center;">
+      <a href="index.html">← Back to Home Page</a>
+    </div>
+
+    <h1>Event Registration</h1>
+
+    <div class="form-group">
+      <label for="fullname">Full Name *</label>
+      <input type="text" name="fullname" id="fullname" placeholder="Enter your full name" required>
+      <div class="error-message" id="fullname-error"></div>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email Address *</label>
+      <input type="email" name="email" id="email" placeholder="your.email@gmail.com" required>
+      <div class="error-message" id="email-error"></div>
+    </div>
+
+    <div class="form-group">
+      <label for="phone">Phone Number *</label>
+      <input type="tel" name="phone" id="phone" placeholder="+91 98765 43210" required>
+      <div class="error-message" id="phone-error"></div>
+    </div>
+
+    <div class="form-group">
+      <label for="username">Username *</label>
+      <input type="text" name="username" id="username" placeholder="Choose a unique username" required>
+      <div class="error-message" id="username-error"></div>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password *</label>
+      <input type="password" name="password" id="password" placeholder="Create a strong password" required>
+      <div class="error-message" id="password-error"></div>
+    </div>
+
+    <div class="form-group">
+      <label for="referral">Referral Code (Optional)</label>
+      <input type="text" name="referral" id="referral" placeholder="Enter referral code if any">
+    </div>
+
+    <button type="submit" id="submitBtn">Register Now</button>
+  </form>
+
+  <script>
+    const form = document.getElementById('registrationForm');
+    const submitBtn = document.getElementById('submitBtn');
+    
+    // Form validation
+    function validateForm() {
+      let isValid = true;
+      
+      // Reset all error messages
+      document.querySelectorAll('.error-message').forEach(el => {
+        el.style.display = 'none';
+      });
+      document.querySelectorAll('input').forEach(el => {
+        el.classList.remove('error');
+      });
+      
+      // Validate full name
+      const fullname = document.getElementById('fullname').value.trim();
+      if (fullname.length < 2) {
+        showError('fullname', 'Name must be at least 2 characters long');
+        isValid = false;
+      }
+      
+      // Validate email
+      const email = document.getElementById('email').value.trim();
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        showError('email', 'Please enter a valid email address');
+        isValid = false;
+      }
+      
+      // Validate phone
+      const phone = document.getElementById('phone').value.trim();
+      const phoneRegex = /^[\+]?[0-9\s\-\(\)]{10,}$/;
+      if (!phoneRegex.test(phone)) {
+        showError('phone', 'Please enter a valid phone number');
+        isValid = false;
+      }
+      
+      // Validate username
+      const username = document.getElementById('username').value.trim();
+      if (username.length < 3) {
+        showError('username', 'Username must be at least 3 characters long');
+        isValid = false;
+      }
+      
+      // Validate password
+      const password = document.getElementById('password').value;
+      if (password.length < 6) {
+        showError('password', 'Password must be at least 6 characters long');
+        isValid = false;
+      }
+      
+      return isValid;
+    }
+    
+    function showError(fieldId, message) {
+      const field = document.getElementById(fieldId);
+      const errorDiv = document.getElementById(fieldId + '-error');
+      field.classList.add('error');
+      errorDiv.textContent = message;
+      errorDiv.style.display = 'block';
+    }
+    
+    form.addEventListener('submit', function(e) {
+      if (!validateForm()) {
+        e.preventDefault();
+        return;
+      }
+      
+      // Disable submit button to prevent double submission
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Processing...';
+    });
+    
+    // Real-time validation
+    document.querySelectorAll('input').forEach(input => {
+      input.addEventListener('blur', function() {
+        const fieldId = this.id;
+        const value = this.value.trim();
+        
+        if (value === '') return;
+        
+        switch(fieldId) {
+          case 'fullname':
+            if (value.length < 2) {
+              showError('fullname', 'Name must be at least 2 characters long');
+            }
+            break;
+          case 'email':
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(value)) {
+              showError('email', 'Please enter a valid email address');
+            }
+            break;
+          case 'phone':
+            const phoneRegex = /^[\+]?[0-9\s\-\(\)]{10,}$/;
+            if (!phoneRegex.test(value)) {
+              showError('phone', 'Please enter a valid phone number');
+            }
+            break;
+          case 'username':
+            if (value.length < 3) {
+              showError('username', 'Username must be at least 3 characters long');
+            }
+            break;
+          case 'password':
+            if (value.length < 6) {
+              showError('password', 'Password must be at least 6 characters long');
+            }
+            break;
+        }
+      });
+      
+      input.addEventListener('input', function() {
+        this.classList.remove('error');
+        const errorDiv = document.getElementById(this.id + '-error');
+        errorDiv.style.display = 'none';
+      });
+    });
+  </script>
+
+</body>
+</html>

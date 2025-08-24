@@ -1,0 +1,30 @@
+# Email configuration secrets
+email_secrets.php
+
+# Environment files
+.env
+.env.local
+.env.production
+
+# Log files
+*.log
+error_log
+
+# Temporary files
+*.tmp
+*.temp
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db

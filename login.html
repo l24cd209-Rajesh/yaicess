@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - YAICESS Innovation Conference 2K25</title>
+    <link rel="stylesheet" href="login.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="login-wrapper">
+        <div class="login-card">
+            <div class="logo-section">
+                <h1>YAICESS<span>.</span></h1>
+                <p>Login Panel</p>
+            </div>
+            
+            <!-- Error Message Display -->
+            <div id="error-message" class="error-message" style="display: none;">
+                <i class="fas fa-exclamation-triangle"></i>
+                <span id="error-text"></span>
+            </div>
+            
+            <div class="login-tabs">
+                <button class="tab-btn active" data-tab="user">
+                    <i class="fas fa-user"></i> User Login
+                </button>
+                <button class="tab-btn" data-tab="admin">
+                    <i class="fas fa-user-shield"></i> Admin Login
+                </button>
+            </div>
+
+            <!-- User Login Form -->
+            <div class="login-form active" id="user-login">
+                <h2>User Login</h2>
+                <form action="user_login.php" method="POST">
+                    <div class="form-group">
+                        <label for="user-identifier">Email or Username</label>
+                        <input type="text" id="user-identifier" name="identifier" placeholder="Enter your email or username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="user-password">Password</label>
+                        <input type="password" id="user-password" name="password" placeholder="Enter your password" required>
+                    </div>
+                    <button type="submit" class="login-btn">
+                        <i class="fas fa-sign-in-alt"></i> Login
+                    </button>
+                </form>
+                <div class="form-footer">
+                    <p>Don't have an account? <a href="userform.html">Register here</a></p>
+                </div>
+            </div>
+
+            <!-- Admin Login Form -->
+            <div class="login-form" id="admin-login">
+                <h2>Admin Login</h2>
+                <form action="admin_auth.php" method="POST">
+                    <div class="form-group">
+                        <label for="admin-username">Username</label>
+                        <input type="text" id="admin-username" name="username" placeholder="Enter admin username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="admin-password">Password</label>
+                        <input type="password" id="admin-password" name="password" placeholder="Enter admin password" required>
+                    </div>
+                    <button type="submit" class="login-btn admin">
+                        <i class="fas fa-shield-alt"></i> Admin Login
+                    </button>
+                </form>
+                <div class="form-footer">
+                    <p>Restricted access for administrators only</p>
+                </div>
+            </div>
+
+            <div class="back-link">
+                <a href="index.html">
+                    <i class="fas fa-arrow-left"></i> Back to Home
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="login.js"></script>
+</body>
+</html>

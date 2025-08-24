@@ -1,0 +1,35 @@
+# Email Configuration Template
+# Copy this file to .env and fill in your actual values
+# NEVER commit .env file to version control
+
+# Gmail SMTP Settings
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=587
+SMTP_USERNAME=your_email@gmail.com
+SMTP_PASSWORD=your_app_password_here
+SMTP_FROM_EMAIL=your_email@gmail.com
+SMTP_FROM_NAME=YAICESS Innovation Conference
+SMTP_SECURE=tls
+SMTP_AUTH=true
+
+# Database Settings
+DB_HOST=localhost
+DB_USERNAME=root
+DB_PASSWORD=
+DB_NAME=event_db
+
+# Application Settings
+APP_ENV=development
+APP_DEBUG=true
+APP_URL=http://localhost/myphp
+
+# Instructions:
+# 1. Copy this file to .env (remove .txt extension)
+# 2. Replace placeholder values with your actual credentials
+# 3. For Gmail App Password:
+#    - Enable 2-Factor Authentication on your Gmail account
+#    - Go to Google Account > Security > App passwords
+#    - Generate a new app password for "Mail"
+#    - Use that password instead of your regular Gmail password
+# 4. Keep .env file secure and never share it
+# 5. Add .env to your .gitignore file
